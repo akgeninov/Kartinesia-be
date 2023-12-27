@@ -7,7 +7,7 @@ const UserRoute =  require('./src/routes/UserRoute.js');
 const ContactUsRoute =  require('./src/routes/ContactUsRoute.js');
 const ArticleRoute = require('./src/routes/ArticleRoutes.js')
 
-const app = express();
+// const app = express();
 
 // MIDDLEWARE
 app.use(cors())
