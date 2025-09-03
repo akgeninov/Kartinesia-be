@@ -1,5 +1,6 @@
-const { DataTypes } = require('sequelize')
+const { DataTypes } = require('sequelize');
 const db = require('../config/db.js');
+const Category = require('./CategoryModel.js');
 
 const Articles = db.define("articles", {
   article_id: {
@@ -16,19 +17,18 @@ const Articles = db.define("articles", {
   description: {
     type: DataTypes.TEXT
   },
-  category: {
-    type: DataTypes.STRING
+  category_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: Category,
+      key: 'category_id'
+    }
   }
-  }, {
-    freezeTableName: true,
-  });
+}, {
+  freezeTableName: true,
+});
 
-
-// WARNING! KODE DI BAWAH BERFUNGSI UNTUK MEMBUAT TABLE BARU ATAU UPDATE TABLE TAPI DENGAN MENGHAPUS SEMUA VALUE YG ADA 
-// db.sync({ alter: true }) // kalo mau menambahkan agar data tidak ke reset semua ganti force jadi alt: true
-// .then(() => {
-//     console.log(`articles synced`)
-// })
-// .catch((error) => console.log(`Unable to connect to databse: ${error}`));
+Articles.belongsTo(Category, { foreignKey: 'category_id', as: 'category' });
+Category.hasMany(Articles, { foreignKey: 'category_id', as: 'articles'});
 
 module.exports = Articles;

@@ -2,6 +2,8 @@ const bcrypt = require('bcrypt');
 const User = require('../models/UserModel');
 const jwt = require('jsonwebtoken')
 
+console.log('JWT_SECRET:', process.env.JWT_SECRET);
+
 // CREAT NEW USER
 const createNewUser = async (req, res) => {
   const {body} = req;
