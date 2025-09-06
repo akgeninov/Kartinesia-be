@@ -2,7 +2,7 @@
 
 ## Deskripsi Proyek
 Kartinesia adalah platform berbasis web yang menyajikan artikel-artikel seputar wanita seperti kesehatan dan fesyen.  
-Proyek ini terdiri dari **frontend** dan **backend**:  
+Proyek ini merupakan hasil pengembangan selama program **Studi Independen** dan terdiri dari **frontend** dan **backend**:  
 
 - **Frontend (HTML, CSS, JavaScript murni):** [Kartinesia Frontend](https://github.com/akgeninov/Kartinesia-fe)  
 - **Backend (Node.js, Express):** repositori ini  
